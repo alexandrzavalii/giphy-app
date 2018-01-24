@@ -1,9 +1,40 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import "./GiphPagination.css";
+import { GIFS_PER_PAGE } from "../settings";
 
-const GIFS_PER_PAGE = 25;
+import styled from 'styled-components';
 
+// Styling
+const Wrapper = styled.section`
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+`;
+
+const PageLink = styled.a`
+    color: black;
+    float: left;
+    padding: 8px 10px;
+    text-decoration: none;
+    display: ${props => props.disabled ? 'none' : 'initial'};
+    background-color: ${props => props.active ? 'palevioletred' : 'white'};
+    color: ${props => props.active ? 'white' : 'black'};
+    border-radius: 3px;
+    &:hover {
+        cursor: pointer;
+    }
+`;
+
+// PropTypes
+const propTypes = {
+    totalItems: PropTypes.number.isRequired,
+    handlePageClick: PropTypes.func.isRequired
+}
+const defaultProps = {
+    initialPage: 1
+}
+
+// Component
 export class GiphPagination extends Component {
     constructor(props) {
         super(props);
@@ -14,6 +45,7 @@ export class GiphPagination extends Component {
 
     componentWillMount() {
         if (this.props.totalItems) {
+            console.log("WILL MOUNT");
             this.setPage(this.props.initialPage);
         }
     }
@@ -27,20 +59,23 @@ export class GiphPagination extends Component {
 
 
     setPage(page) {
-        var items = this.props.totalItems;
-        var pager = this.state.pager;
+        console.log("PAGE",page);
+        console.log("PROPS", this.props.initialPage);
+        if (page !== this.state.pager.currentPage) {
+            var items = this.props.totalItems;
+            var pager = this.state.pager;
 
-        if (page < 1 || page > pager.totalPages) {
-            return;
+            if (page < 1 || page > pager.totalPages) {
+                return;
+            }
+
+            // get new pager object for specified page
+            pager = this.getPager(items, page);
+            this.setState({ pager: pager });
+
+            // call change page function in parent component
+            this.props.handlePageClick((page - 1) * GIFS_PER_PAGE);
         }
-
-        // get new pager object for specified page
-        pager = this.getPager(items, page);
-        this.setState({ pager: pager });
-
-        // call change page function in parent component
-        console.log("SEND TO PAGE", page - 1);
-        this.props.handlePageClick((page - 1) * GIFS_PER_PAGE);
     }
 
     getPager(totalItems, currentPage) {
@@ -52,7 +87,6 @@ export class GiphPagination extends Component {
 
         // calculate total pages
         var totalPages = Math.ceil(totalItems / pageSize);
-        console.log("totalItems", totalItems);
         var startPage, endPage;
         if (totalPages <= 10) {
             // less than 10 total pages so show all
@@ -84,7 +118,6 @@ export class GiphPagination extends Component {
         return {
             totalItems: totalItems,
             currentPage: currentPage,
-            pageSize: pageSize,
             totalPages: totalPages,
             startPage: startPage,
             endPage: endPage,
@@ -95,54 +128,38 @@ export class GiphPagination extends Component {
     }
 
     render() {
-        var pager = this.state.pager;
+        const pager = this.state.pager;
 
         if (!pager.pages || pager.pages.length <= 1) {
-            // don't display pager if there is only 1 page
             return null;
         }
 
         return (
-            <div className="pagination">
-                <a className={pager.currentPage === 1 ? 'disabled' : ''} onClick={() => this.setPage(1)}>
+            <Wrapper>
+                <PageLink disabled={pager.currentPage === 1} onClick={() => this.setPage(1)}>
                     &laquo;
-                    </a>
-                <a className={pager.currentPage === 1 ? 'disabled' : ''} onClick={() => this.setPage(pager.currentPage - 1)}>
+                    </PageLink>
+                <PageLink disabled={pager.currentPage === 1} onClick={() => this.setPage(pager.currentPage - 1)}>
                     &#8592;
-                    </a>
+                    </PageLink>
                 {pager.pages.map((page, index) =>
-                    <a key={index}
-                        className={pager.currentPage === page ? 'active' : ''}
-                        onClick={() => this.setPage(page)}>{page}</a>
+                    <PageLink key={index}
+                        active={pager.currentPage === page}
+                        onClick={() => this.setPage(page)}>{page}</PageLink>
                 )}
-                <a className={pager.currentPage === pager.totalPages ? 'disabled' : ''}
+                <PageLink disabled={pager.currentPage === pager.totalPages}
                     onClick={() => this.setPage(pager.currentPage + 1)}>
                     &#8594;
-                </a>
-                <a className={pager.currentPage === pager.totalPages ? 'disabled' : ''}
+                </PageLink>
+                <PageLink disabled={pager.currentPage === pager.totalPages}
                     onClick={() => this.setPage(pager.totalPages)}>
                     &raquo;
-                </a>
-            </div>
+                </PageLink>
+            </Wrapper>
         );
 
     }
 }
 
-GiphPagination.propTypes = {
-    totalItems: PropTypes.number.isRequired,
-    handlePageClick: PropTypes.func.isRequired
-}
-
-GiphPagination.defaultProps = {
-    initialPage: 1
-}
-
-const styles = {
-    page: {
-        width: "40px",
-        display: "inline",
-        height: "40px",
-        fontWeight: "bold"
-    }
-}
+GiphPagination.propTypes = propTypes;
+GiphPagination.defaultProps = defaultProps;

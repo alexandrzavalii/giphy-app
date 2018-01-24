@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import './App.css';
 import { getGiphys, abortGetGiphys } from './api.js';
 import { GiphyList } from "./components/GiphyList";
 import { GiphSelector } from "./components/GiphSelector";
 import { GiphPagination } from "./components/GiphPagination";
+import { Loading } from "./components/Loading";
 import { debounced } from './utils';
+import { AVAILABLE_CATEGORIES } from './settings';
 
-const AVAILABLE_CATEGORIES = ["Cats", "Dogs"];
-const API_KEY = 'Vr7NmBCxiA2KqxBc12722GaBiUIKRRy0';
 
 class App extends Component {
   constructor() {
@@ -15,7 +14,8 @@ class App extends Component {
     this.state = {
       data: [],
       category: AVAILABLE_CATEGORIES[0],
-      totalItems: 0
+      totalItems: 0,
+      loading: true
     }
     this.selectCategory = this.selectCategory.bind(this);
     this.selectPage = this.selectPage.bind(this);
@@ -24,45 +24,57 @@ class App extends Component {
 
 
   componentDidMount() {
-    getGiphys(this.state.category).then(response => {
-      const { data, pagination } = response;
-      console.log("TOTAL", pagination);
-      this.setState({ data, totalItems: pagination.total_count });
+    setTimeout(() => getGiphys(this.state.category).then(({ data, pagination }) => {
+      this.setState((prevState, props) => ({
+        data,
+        totalItems: pagination.total_count,
+        loading: false
+      }));
+    }), 1000)
+
+  }
+
+  handleGet(category, offset) {
+    this.setState({ loading: true }, () => {
+      abortGetGiphys();
+      debounced(500,
+        getGiphys(category, offset).then(({ data, pagination }) =>
+          this.setState((prevState, props) => ({
+            category, data, totalItems: pagination.total_count, loading: false
+          }))
+        ))
     });
   }
 
-  selectCategory(category) {
-    if (AVAILABLE_CATEGORIES.length <= 2 && category === this.state.category) {
 
-    } else {
-      getGiphys(category).then(response => {
-        const { data, pagination } = response;
-        this.setState({ category, data, totalItems: pagination.total_count });
-      });
+  selectCategory(category) {
+    if (category !== this.state.category) {
+      this.handleGet(category, 0);
     }
   }
-  selectPage = (offset) => {
-    console.log("offset", offset);
-    abortGetGiphys();
-    debounced(500,
-      getGiphys(this.state.category, offset).then(response => {
-        const { data } = response;
-        this.setState({ data });
-      }))
+
+  selectPage(offset) {
+    console.log("SELECT PAGE", offset);
+    // this.handleGet(this.state.category, offset);
   }
 
   render() {
-    console.log("state", this.state);
+    
     return (
       <div className="App">
-        <GiphSelector availableCategories={AVAILABLE_CATEGORIES} handleClick={this.selectCategory} />
-        {this.state.totalItems > 0 &&
-          <GiphPagination
-            handlePageClick={this.selectPage}
-            totalItems={this.state.totalItems}
-          />
+        <GiphSelector activeCategory={this.state.category} availableCategories={AVAILABLE_CATEGORIES} handleClick={this.selectCategory} />
+        {this.state.loading && <Loading />}
+
+        {!this.state.loading &&
+          <React.Fragment>
+            <GiphPagination
+              handlePageClick={this.selectPage}
+              totalItems={this.state.totalItems}
+            />
+            <GiphyList data={this.state.data} />
+          </React.Fragment>
         }
-        <GiphyList data={this.state.data} />
+
       </div>
     );
   }
