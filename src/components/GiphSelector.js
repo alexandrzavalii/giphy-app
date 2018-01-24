@@ -10,16 +10,16 @@ const Wrapper = styled.section`
 `;
 
 const Button = styled.button`
-background: ${props => props.selected ? 'palevioletred' : 'white'};
-color: ${props => props.selected ? 'white' : 'palevioletred'};
-font-size: 1em;
-margin: 1em;
-padding: 0.25em 1em;
-border: 2px solid palevioletred;
-border-radius: 3px;
-&:hover {
-    cursor: pointer;
-}
+    background: ${props => props.selected ? props.theme.base : props.theme.light};
+    color: ${props => props.selected ? props.theme.light : props.theme.base};
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid ${props => props.theme.base};
+    border-radius: 3px;
+        &:hover {
+            cursor: pointer;
+        }
 `;
 
 const propTypes = {

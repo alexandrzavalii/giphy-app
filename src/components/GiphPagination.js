@@ -17,8 +17,8 @@ const PageLink = styled.a`
     padding: 8px 10px;
     text-decoration: none;
     display: ${props => props.disabled ? 'none' : 'initial'};
-    background-color: ${props => props.active ? 'palevioletred' : 'white'};
-    color: ${props => props.active ? 'white' : 'black'};
+    background-color: ${props => props.active ? props.theme.base : props.theme.light};
+    color: ${props => props.active ? props.theme.light : 'black'};
     border-radius: 3px;
     &:hover {
         cursor: pointer;
