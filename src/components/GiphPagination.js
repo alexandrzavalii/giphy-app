@@ -17,8 +17,8 @@ const PageLink = styled.a`
     padding: 8px 10px;
     text-decoration: none;
     display: ${props => props.disabled ? 'none' : 'initial'};
-    background-color: ${props => props.active ? props.theme.base : props.theme.light};
-    color: ${props => props.active ? props.theme.light : 'black'};
+    background-color: ${props => props.active ? props.theme.base : 'none'};
+    color: ${props => props.theme.light};
     border-radius: 3px;
     &:hover {
         cursor: pointer;
@@ -59,34 +59,30 @@ export class GiphPagination extends Component {
 
 
     setPage(page) {
-        console.log("PAGE",page);
-        console.log("PROPS", this.props.initialPage);
         if (page !== this.state.pager.currentPage) {
-            var items = this.props.totalItems;
-            var pager = this.state.pager;
 
-            if (page < 1 || page > pager.totalPages) {
+            if (page < 1 || page > this.state.pager.totalPages) {
                 return;
             }
 
             // get new pager object for specified page
-            pager = this.getPager(items, page);
-            this.setState({ pager: pager });
+            let pager = this.getPager(this.props.totalItems, page);
+            this.setState((prevState, props) => {
+                if(prevState.pager.currentPage) {
+                    console.log("CALL THIS");
+                    this.props.handlePageClick((page - 1) * GIFS_PER_PAGE);
+                }    
+                return { pager } 
+            });
 
-            // call change page function in parent component
-            this.props.handlePageClick((page - 1) * GIFS_PER_PAGE);
+
         }
     }
 
     getPager(totalItems, currentPage) {
-        // default to first page
         currentPage = currentPage || 1;
-
-        // default page size is 10
-        let pageSize = GIFS_PER_PAGE;
-
         // calculate total pages
-        var totalPages = Math.ceil(totalItems / pageSize);
+        var totalPages = Math.ceil(totalItems / GIFS_PER_PAGE);
         var startPage, endPage;
         if (totalPages <= 10) {
             // less than 10 total pages so show all
@@ -106,23 +102,15 @@ export class GiphPagination extends Component {
             }
         }
 
-        // calculate start and end item indexes
-        var startIndex = (currentPage - 1) * pageSize;
-        var endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
-
         // create an array of pages to ng-repeat in the pager control
         // var pages = Array.from({length: end - start}, (v, k) => k + start)
         var pages = Array.from({ length: endPage + 1 - startPage }, (v, k) => k + startPage);
 
-        // return object with all pager properties required by the view
         return {
-            totalItems: totalItems,
             currentPage: currentPage,
             totalPages: totalPages,
             startPage: startPage,
             endPage: endPage,
-            startIndex: startIndex,
-            endIndex: endIndex,
             pages: pages
         };
     }

@@ -4,14 +4,13 @@ import styled from 'styled-components';
 
 const Wrapper = styled.section`
     padding: 1em;
-    background: papayawhip;
     display: flex;
     justify-content: center;
 `;
 
 const Button = styled.button`
-    background: ${props => props.selected ? props.theme.base : props.theme.light};
-    color: ${props => props.selected ? props.theme.light : props.theme.base};
+    background: ${props => props.selected ? props.theme.base : "initial"};
+    color: ${props => props.theme.light};
     font-size: 1em;
     margin: 1em;
     padding: 0.25em 1em;
@@ -30,7 +29,6 @@ const propTypes = {
 
 
 export const GiphSelector = ({ activeCategory, availableCategories, handleClick }) => {
-    console.log("AVAILABLE CAT",availableCategories)
     let categories = availableCategories.length > 0 ?
         availableCategories.map(category =>
             <Button key={category}

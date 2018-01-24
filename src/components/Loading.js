@@ -8,7 +8,7 @@ const Loader = styled.div`
     width: 6em;
     height: 6em;
     border: 1.1em solid rgba(0, 0, 0, 0.2);
-    border-left: 1.1em solid papayawhip;
+    border-left: 1.1em solid ${props => props.theme.base };
     border-radius: 50%;
     animation: load8 1.1s infinite linear;
     @keyframes load8 {
@@ -20,14 +20,5 @@ const Loader = styled.div`
             }
         }
 `;
-
-
-
-
-
-// const Gif = styled.img`
-//   width: 100% ;
-//   height: auto ;
-// `;
 
 export const Loading = () => <Loader />;
