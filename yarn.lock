@@ -2469,6 +2469,10 @@ fbjs@^0.8.16:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
 
+fetch-please@^0.4.3:
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/fetch-please/-/fetch-please-0.4.3.tgz#02a42b74f3489d861b0fde0d2544bacc4b50bd8c"
+
 figures@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/figures/-/figures-2.0.0.tgz#3ab1a2d2a62c8bfb431a0c94cb797a2fce27c962"
