@@ -15,10 +15,12 @@ class App extends Component {
       data: [],
       category: AVAILABLE_CATEGORIES[0],
       totalItems: 0,
-      loading: true
+      loading: true,
+      selectedGiph: null
     }
     this.selectCategory = this.selectCategory.bind(this);
     this.selectPage = this.selectPage.bind(this);
+    this.selectGiph = this.selectGiph.bind(this);
   }
 
 
@@ -41,21 +43,24 @@ class App extends Component {
       debounced(500,
         getGiphys(category, offset).then(({ data, pagination }) =>
           this.setState((prevState, props) => prevState.category !== setCategory ?
-            ({ category, data, totalItems: pagination.total_count, loading: false }) :
-            ({ data, loading: false }))
+            ({ category, data, totalItems: pagination.total_count, loading: false, selectedGiph: null }) :
+            ({ data, loading: false, selectedGiph: null }))
         ))
     });
   }
 
 
   selectCategory(category) {
-      this.handleGet(category, 0);
+    this.handleGet(category, 0);
   }
 
   selectPage(offset) {
     this.handleGet(this.state.category, offset);
   }
-
+  
+  selectGiph(selectedGiph) {
+    this.setState({ selectedGiph })
+  }
   render() {
     console.log("RENDER", this.state);
     return (
@@ -67,7 +72,10 @@ class App extends Component {
           totalItems={this.state.totalItems}
         />
         {!this.state.loading &&
-          <GiphyList data={this.state.data} />
+          <GiphyList
+            selectedGiph={this.state.selectedGiph}
+            handleGiphInteraction={this.selectGiph}
+            data={this.state.data} />
         }
 
       </div>

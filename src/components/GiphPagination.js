@@ -124,9 +124,6 @@ export class GiphPagination extends Component {
 
         return (
             <Wrapper>
-                <PageLink disabled={pager.currentPage === 1} onClick={() => this.setPage(1)}>
-                    &laquo;
-                    </PageLink>
                 <PageLink disabled={pager.currentPage === 1} onClick={() => this.setPage(pager.currentPage - 1)}>
                     &#8592;
                     </PageLink>
@@ -138,10 +135,6 @@ export class GiphPagination extends Component {
                 <PageLink disabled={pager.currentPage === pager.totalPages}
                     onClick={() => this.setPage(pager.currentPage + 1)}>
                     &#8594;
-                </PageLink>
-                <PageLink disabled={pager.currentPage === pager.totalPages}
-                    onClick={() => this.setPage(pager.totalPages)}>
-                    &raquo;
                 </PageLink>
             </Wrapper>
         );
