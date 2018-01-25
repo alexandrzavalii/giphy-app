@@ -45,7 +45,6 @@ export class GiphPagination extends Component {
 
     componentWillMount() {
         if (this.props.totalItems) {
-            console.log("WILL MOUNT");
             this.setPage(this.props.initialPage);
         }
     }
@@ -69,7 +68,6 @@ export class GiphPagination extends Component {
             let pager = this.getPager(this.props.totalItems, page);
             this.setState((prevState, props) => {
                 if(prevState.pager.currentPage) {
-                    console.log("CALL THIS");
                     this.props.handlePageClick((page - 1) * GIFS_PER_PAGE);
                 }    
                 return { pager } 

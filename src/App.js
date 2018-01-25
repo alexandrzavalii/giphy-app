@@ -62,7 +62,6 @@ class App extends Component {
     this.setState({ selectedGiph })
   }
   render() {
-    console.log("RENDER", this.state);
     return (
       <div className="App">
         <GiphSelector activeCategory={this.state.category} availableCategories={AVAILABLE_CATEGORIES} handleClick={this.selectCategory} />
