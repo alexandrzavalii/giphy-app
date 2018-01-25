@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { getGiphys, abortGetGiphys } from './api.js';
 import { GiphyList } from "./components/GiphyList";
-import { GiphSelector } from "./components/GiphSelector";
-import { GiphPagination } from "./components/GiphPagination";
+import { CategorySelector } from "./components/CategorySelector";
+import { Pagination } from "./components/Pagination";
 import { Loading } from "./components/Loading";
 import { debounced } from './utils';
 import { AVAILABLE_CATEGORIES } from './settings';
@@ -77,9 +77,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <GiphSelector activeCategory={this.state.category} availableCategories={AVAILABLE_CATEGORIES} handleClick={this.selectCategory} />
+        <CategorySelector 
+          activeCategory={this.state.category} 
+          availableCategories={AVAILABLE_CATEGORIES} 
+          handleClick={this.selectCategory} />
         {this.state.loading && <Loading />}
-        <GiphPagination
+        <Pagination
           handlePageClick={this.selectPage}
           totalItems={this.state.totalItems}
         />

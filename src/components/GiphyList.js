@@ -22,14 +22,18 @@ const Wrapper = styled.section`
   }
 `;
 
+const NotFound = styled.div`
+  display: flex;
+  justify-content: center;
+  color: ${props => props.theme.light};
+`;
 
 export const GiphyList = ({ data, handleGiphInteraction, selectedGiph }) => {
     let gifs = data.length > 0 ?
-        data.map(gif =>
+        data.map(gif => 
             <Giph key={gif.id} selected={selectedGiph===gif.id} id={gif.id} handleGiphInteraction={handleGiphInteraction} giphSrc={gif.images.fixed_width.url} giphSlug={gif.slug} />
-        ) :
-        <p> No Gifs found </p>;
-    return <Wrapper selectedGifExists={selectedGiph}>{gifs}</Wrapper>;
+        ) : null;
+    return data.length > 0 ? <Wrapper selectedGifExists={selectedGiph}> {gifs}</Wrapper>: <NotFound>Not Found</NotFound>
 };
 
 GiphyList.propTypes = {

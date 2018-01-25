@@ -18,7 +18,7 @@ const propTypes = {
 
 export class Giph extends React.PureComponent {
     constructor(props){
-        super(props);
+        super();
         this.selectGiph = this.selectGiph.bind(this);
     }
     

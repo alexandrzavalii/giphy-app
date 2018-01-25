@@ -28,7 +28,7 @@ const propTypes = {
 }
 
 
-export const GiphSelector = ({ activeCategory, availableCategories, handleClick }) => {
+export const CategorySelector = ({ activeCategory, availableCategories, handleClick }) => {
     let categories = availableCategories.length > 0 ?
         availableCategories.map(category =>
             <Button key={category}
@@ -38,4 +38,4 @@ export const GiphSelector = ({ activeCategory, availableCategories, handleClick 
     return <Wrapper>{categories}</Wrapper>;
 }
 
-GiphSelector.propTypes = propTypes;
+CategorySelector.propTypes = propTypes;
