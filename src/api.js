@@ -2,7 +2,7 @@
 import FetchPlease from 'fetch-please';
 
 const API_KEY = 'Vr7NmBCxiA2KqxBc12722GaBiUIKRRy0';
-const GIPHY_URL = 'http://api.giphy.com/v1/gifs';
+const GIPHY_URL = 'https://api.giphy.com/v1/gifs';
 
 let API = new FetchPlease(GIPHY_URL);
 
