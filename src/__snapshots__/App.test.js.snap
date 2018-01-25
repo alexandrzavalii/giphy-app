@@ -1,0 +1,375 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<App /> should render correctly with data 1`] = `
+<section
+  className="sc-bwzfXH fYCLEG"
+>
+  <img
+    alt="cats-light-sabers-Ov5NiLVXT8JEc"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/Ov5NiLVXT8JEc/200w.gif"
+  />
+  <img
+    alt="cats-blanket-W3QKEujo8vztC"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media1.giphy.com/media/W3QKEujo8vztC/200w.gif"
+  />
+  <img
+    alt="cat-funny-animation-aC45M5Q4D07Pq"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media3.giphy.com/media/aC45M5Q4D07Pq/200w.gif"
+  />
+  <img
+    alt="cat-cats-OmK8lulOMQ9XO"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/OmK8lulOMQ9XO/200w.gif"
+  />
+  <img
+    alt="aEXP6scfSSwQo"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/aEXP6scfSSwQo/200w.gif"
+  />
+  <img
+    alt="cat-fail-JfLdIahamXQI0"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media1.giphy.com/media/JfLdIahamXQI0/200w.gif"
+  />
+  <img
+    alt="cat-sweet-eyes-9JLQKmspQAMWQ"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media3.giphy.com/media/9JLQKmspQAMWQ/200w.gif"
+  />
+  <img
+    alt="producthunt-cats-music-streaming-3o72EX5QZ9N9d51dqo"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media1.giphy.com/media/3o72EX5QZ9N9d51dqo/200w.gif"
+  />
+  <img
+    alt="cat-lol-peeks-jS6sVMK2fu4Uw"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media1.giphy.com/media/jS6sVMK2fu4Uw/200w.gif"
+  />
+  <img
+    alt="kitty-cats-funny-12ipPASHq1luj6"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media2.giphy.com/media/12ipPASHq1luj6/200w.gif"
+  />
+  <img
+    alt="afv-funny-lol-cats-3o85xkpCruOJPGtBMQ"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/3o85xkpCruOJPGtBMQ/200w.gif"
+  />
+  <img
+    alt="afvpets-cats-pets-afv-3oEduUVL7wX5a1NBXq"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/3oEduUVL7wX5a1NBXq/200w.gif"
+  />
+  <img
+    alt="cats-headwear-transmissions-iOmFvna43V78c"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media3.giphy.com/media/iOmFvna43V78c/200w.gif"
+  />
+  <img
+    alt="cat-talking-ucEr1xRMsj6Fi"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media3.giphy.com/media/ucEr1xRMsj6Fi/200w.gif"
+  />
+  <img
+    alt="cats-gl8ymnpv4Sqha"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media2.giphy.com/media/gl8ymnpv4Sqha/200w.gif"
+  />
+  <img
+    alt="cat-animals-being-jerks-dicks-NqZn5kPN8VVrW"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media1.giphy.com/media/NqZn5kPN8VVrW/200w.gif"
+  />
+  <img
+    alt="aww-edition-ExMGjbktr4phe"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/ExMGjbktr4phe/200w.gif"
+  />
+  <img
+    alt="cheezburger-cats-glasses-nerds-xT77XZrTKOxycjaYvK"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media2.giphy.com/media/xT77XZrTKOxycjaYvK/200w.gif"
+  />
+  <img
+    alt="na-gon-then-oMV9WErqn3ZG8"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/oMV9WErqn3ZG8/200w.gif"
+  />
+  <img
+    alt="cats-10rW4Xw9eO0RmU"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media3.giphy.com/media/10rW4Xw9eO0RmU/200w.gif"
+  />
+  <img
+    alt="cat-star-wars-9gISqB3tncMmY"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/9gISqB3tncMmY/200w.gif"
+  />
+  <img
+    alt="cats-spin-cat-gif-11c7UUfN4eoHF6"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media1.giphy.com/media/11c7UUfN4eoHF6/200w.gif"
+  />
+  <img
+    alt="request-cats-5oBRpcOT04dq0"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media2.giphy.com/media/5oBRpcOT04dq0/200w.gif"
+  />
+  <img
+    alt="cute-pig-cat-hKrpeqRJowwi4"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media3.giphy.com/media/hKrpeqRJowwi4/200w.gif"
+  />
+  <img
+    alt="day-cake-W7dBXzbnEpOBG"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/W7dBXzbnEpOBG/200w.gif"
+  />
+</section>
+`;
+
+exports[`<GiphyList /> should render correctly with data 1`] = `
+<section
+  className="sc-bwzfXH fYCLEG"
+>
+  <img
+    alt="cats-light-sabers-Ov5NiLVXT8JEc"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/Ov5NiLVXT8JEc/200w.gif"
+  />
+  <img
+    alt="cats-blanket-W3QKEujo8vztC"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media1.giphy.com/media/W3QKEujo8vztC/200w.gif"
+  />
+  <img
+    alt="cat-funny-animation-aC45M5Q4D07Pq"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media3.giphy.com/media/aC45M5Q4D07Pq/200w.gif"
+  />
+  <img
+    alt="cat-cats-OmK8lulOMQ9XO"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/OmK8lulOMQ9XO/200w.gif"
+  />
+  <img
+    alt="aEXP6scfSSwQo"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/aEXP6scfSSwQo/200w.gif"
+  />
+  <img
+    alt="cat-fail-JfLdIahamXQI0"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media1.giphy.com/media/JfLdIahamXQI0/200w.gif"
+  />
+  <img
+    alt="cat-sweet-eyes-9JLQKmspQAMWQ"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media3.giphy.com/media/9JLQKmspQAMWQ/200w.gif"
+  />
+  <img
+    alt="producthunt-cats-music-streaming-3o72EX5QZ9N9d51dqo"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media1.giphy.com/media/3o72EX5QZ9N9d51dqo/200w.gif"
+  />
+  <img
+    alt="cat-lol-peeks-jS6sVMK2fu4Uw"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media1.giphy.com/media/jS6sVMK2fu4Uw/200w.gif"
+  />
+  <img
+    alt="kitty-cats-funny-12ipPASHq1luj6"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media2.giphy.com/media/12ipPASHq1luj6/200w.gif"
+  />
+  <img
+    alt="afv-funny-lol-cats-3o85xkpCruOJPGtBMQ"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/3o85xkpCruOJPGtBMQ/200w.gif"
+  />
+  <img
+    alt="afvpets-cats-pets-afv-3oEduUVL7wX5a1NBXq"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/3oEduUVL7wX5a1NBXq/200w.gif"
+  />
+  <img
+    alt="cats-headwear-transmissions-iOmFvna43V78c"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media3.giphy.com/media/iOmFvna43V78c/200w.gif"
+  />
+  <img
+    alt="cat-talking-ucEr1xRMsj6Fi"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media3.giphy.com/media/ucEr1xRMsj6Fi/200w.gif"
+  />
+  <img
+    alt="cats-gl8ymnpv4Sqha"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media2.giphy.com/media/gl8ymnpv4Sqha/200w.gif"
+  />
+  <img
+    alt="cat-animals-being-jerks-dicks-NqZn5kPN8VVrW"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media1.giphy.com/media/NqZn5kPN8VVrW/200w.gif"
+  />
+  <img
+    alt="aww-edition-ExMGjbktr4phe"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/ExMGjbktr4phe/200w.gif"
+  />
+  <img
+    alt="cheezburger-cats-glasses-nerds-xT77XZrTKOxycjaYvK"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media2.giphy.com/media/xT77XZrTKOxycjaYvK/200w.gif"
+  />
+  <img
+    alt="na-gon-then-oMV9WErqn3ZG8"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/oMV9WErqn3ZG8/200w.gif"
+  />
+  <img
+    alt="cats-10rW4Xw9eO0RmU"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media3.giphy.com/media/10rW4Xw9eO0RmU/200w.gif"
+  />
+  <img
+    alt="cat-star-wars-9gISqB3tncMmY"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/9gISqB3tncMmY/200w.gif"
+  />
+  <img
+    alt="cats-spin-cat-gif-11c7UUfN4eoHF6"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media1.giphy.com/media/11c7UUfN4eoHF6/200w.gif"
+  />
+  <img
+    alt="request-cats-5oBRpcOT04dq0"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media2.giphy.com/media/5oBRpcOT04dq0/200w.gif"
+  />
+  <img
+    alt="cute-pig-cat-hKrpeqRJowwi4"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media3.giphy.com/media/hKrpeqRJowwi4/200w.gif"
+  />
+  <img
+    alt="day-cake-W7dBXzbnEpOBG"
+    className="sc-bdVaJa LLYPZ"
+    onMouseOver={[Function]}
+    selected={false}
+    src="https://media0.giphy.com/media/W7dBXzbnEpOBG/200w.gif"
+  />
+</section>
+`;
+
+exports[`<GiphyList /> should render correctly with no data 1`] = `
+<section
+  className="sc-bwzfXH fYCLEG"
+>
+  <p>
+     No Gifs found 
+  </p>
+</section>
+`;

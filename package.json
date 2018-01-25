@@ -9,6 +9,9 @@
     "styled-components": "^3.0.2"
   },
   "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
     "react-scripts": "1.1.0"
   },
   "scripts": {

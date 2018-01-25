@@ -21,12 +21,12 @@ export class Giph extends React.PureComponent {
         super(props);
         this.selectGiph = this.selectGiph.bind(this);
     }
+    
     selectGiph() {
         this.props.handleGiphInteraction(this.props.id);
     }
 
     render() {
-        console.log("RENDER GIPH");
         return <Gif selected={this.props.selected} src={this.props.giphSrc} alt={this.props.giphSlug} onMouseOver={this.selectGiph} />
     }
 }
