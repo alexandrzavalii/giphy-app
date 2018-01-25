@@ -42,9 +42,22 @@ class App extends Component {
       abortGetGiphys();
       debounced(500,
         getGiphys(category, offset).then(({ data, pagination }) =>
-          this.setState((prevState, props) => prevState.category !== setCategory ?
-            ({ category, data, totalItems: pagination.total_count, loading: false, selectedGiph: null }) :
-            ({ data, loading: false, selectedGiph: null }))
+          this.setState((prevState, props) => {
+            const state = {};
+            
+            if (prevState.category !== setCategory) {
+              state.category = setCategory;
+            }
+            if(prevState.totalItems !== pagination.total_count) {
+              state.totalItems = pagination.total_count
+            }
+            return {
+              data, loading: false, selectCategory: null, ...state
+            }
+          })
+          // prevState.category !== setCategory ?
+          //   ({ data, totalItems: pagination.total_count, loading: false, selectedGiph: null }) :
+          //   ({ data, loading: false, selectedGiph: null }))
         ))
     });
   }

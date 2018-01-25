@@ -14,7 +14,7 @@ const Wrapper = styled.section`
 const PageLink = styled.a`
     color: black;
     float: left;
-    padding: 8px 10px;
+    padding: 8px 5px;
     text-decoration: none;
     display: ${props => props.disabled ? 'none' : 'initial'};
     background-color: ${props => props.active ? props.theme.base : 'none'};
