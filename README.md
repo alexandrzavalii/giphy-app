@@ -1,4 +1,4 @@
-# Coding Exercise for Swrve
+# Giphy Api using React
 
 The application should include the following features:
   ● A control to show latest Cats or Dog results (no search field needed).
@@ -41,7 +41,7 @@ The tests are placed next to the corresponding components, making it eas
 * 2. Being Able to add more cateogires
 * 3. Reusable components
 * 4. The performance of the app
-* 4. Styling of the app with theming
+* 4. Styling of the app with styled-component and theming
 
 
 ## Implementation Plan
